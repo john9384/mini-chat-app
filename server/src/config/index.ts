@@ -9,6 +9,9 @@ if (!envFound) {
 const config = {
   appName: process.env.APP_NAME,
   port: process.env.PORT,
+  db: {
+    mongoUrl: process.env.MONGODB_URL,
+  },
   frontend: {
     url: process.env.FRONTEND_URL,
   },

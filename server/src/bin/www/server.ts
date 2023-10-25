@@ -1,6 +1,7 @@
 import { Server } from "socket.io"
 import config from "../../config"
 import appConfiguration from "../../app"
+import { MongoDBConnection } from "../../databases/mongodb/access/dbConnection"
 
 initializeServer()
   .then(() => {
@@ -17,6 +18,8 @@ initializeServer()
 
 async function initializeServer(): Promise<void> {
   const server = appConfiguration()
+
+  await MongoDBConnection.initConnection()
 
   const io = new Server(server, {
     cors: {
