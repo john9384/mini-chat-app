@@ -15,6 +15,9 @@ const config = {
   frontend: {
     url: process.env.FRONTEND_URL,
   },
+  jwt: {
+    secret: process.env.JWT_SECRET,
+  },
 }
 
 export default config
